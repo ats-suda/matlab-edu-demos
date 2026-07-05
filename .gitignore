@@ -1,5 +1,6 @@
 # --- MATLAB ---
-*.asv          # エディタ自動保存バックアップ
+# エディタ自動保存・一時生成物
+*.asv
 *.m~
 *.autosave
 slprj/
@@ -18,7 +19,9 @@ desktop.ini
 .idea/
 
 # --- 非公開の作業ドラフト・中間物 ---
-FEX_SUBMISSION.md   # File Exchange提出用の内部ドラフト（公開しない）
-archive/            # 試作中間物（公開しない）
+# File Exchange提出用の内部ドラフト（公開しない）
+FEX_SUBMISSION.md
+# 試作中間物（公開しない）
+archive/
 
-# ※ .mlx と images/*.png は成果物のため追跡対象（無視しない）
+# 注: .mlx と images/*.png は成果物のため追跡対象（無視しない）
