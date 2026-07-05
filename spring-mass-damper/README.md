@@ -148,7 +148,7 @@ collection). / BSD 3-Clause ライセンス。詳細は [../LICENSE.txt](../LICE
 
 ## Author & Citation / 著者・引用
 
-- Author / 著者: **A. Suda**, [Affiliation / 所属]
+- Author / 著者: **A. Suda**, National Institute of Technology (KOSEN), Nara College
 - Contact / 連絡先: [email]
 
 If you use this in teaching or research, a citation is appreciated / 教育・研究で

@@ -73,5 +73,4 @@ BSD 3-Clause License. See [LICENSE.txt](LICENSE.txt). / BSD 3-Clause ライセ�
 
 ## Author / 著者
 
-- Author / 著者: **A. Suda**, [Affiliation / 所属]
-- Contact / 連絡先: [email]
+- Author / 著者: **A. Suda**, National Institute of Technology (KOSEN), Nara College
