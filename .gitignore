@@ -1,0 +1,24 @@
+# --- MATLAB ---
+*.asv          # エディタ自動保存バックアップ
+*.m~
+*.autosave
+slprj/
+codegen/
+*.mex*
+*.slxc
+octave-workspace
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Editors ---
+.vscode/
+.idea/
+
+# --- 非公開の作業ドラフト・中間物 ---
+FEX_SUBMISSION.md   # File Exchange提出用の内部ドラフト（公開しない）
+archive/            # 試作中間物（公開しない）
+
+# ※ .mlx と images/*.png は成果物のため追跡対象（無視しない）
