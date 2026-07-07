@@ -15,6 +15,7 @@ update in real time. Base MATLAB only, no extra toolboxes required.
 | Demo / デモ | Topic / テーマ | Status / 状態 |
 |---|---|---|
 | [**spring-mass-damper/**](spring-mass-damper/) | Free vibration of a spring–mass–damper system / ばね-マス-ダンパ系の自由振動 | ✅ Available / 公開 |
+| [**pid-control/**](pid-control/) | P / PI / PID step-response comparison / P・PI・PID のステップ応答比較 | ✅ Available / 公開 |
 | `projectile-motion/` | Projectile motion (with/without air drag) / 放物線運動（空気抵抗あり/なし） | 🚧 In preparation / 準備中 |
 | `fourier-series/` | Fourier-series approximation of a square wave / フーリエ級数による矩形波近似 | 🚧 In preparation / 準備中 |
 
