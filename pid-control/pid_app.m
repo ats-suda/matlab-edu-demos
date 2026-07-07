@@ -10,7 +10,7 @@ uilabel(panel, 'Text', '微分ゲイン  Kd', 'Position', [10 320 200 22], 'Font
 sld_d = uislider(panel, 'Limits', [0 10], 'Value', 1, 'Position', [12 300 200 3], 'MajorTicks', [0 2.5 5 7.5 10]);
 lbl_d = uilabel(panel, 'Text', 'Kd = 1.0', 'Position', [10 275 200 22], 'FontSize', 10, 'HorizontalAlignment', 'center');
 uilabel(panel, 'Text', '─── 定常偏差 ───', 'Position', [10 230 200 22], 'FontSize', 10, 'HorizontalAlignment', 'center');
-lbl_ess = uilabel(panel, 'Text', 'P=0.33  PI=0.00  PID=0.00', 'Position', [10 205 200 22], 'FontSize', 10, 'HorizontalAlignment', 'center', 'FontColor', [0 0 0.8]);
+lbl_ess = uilabel(panel, 'Text', 'P=0.33 PI=0.00 PD=0.33 PID=0.00', 'Position', [10 205 210 22], 'FontSize', 9.5, 'HorizontalAlignment', 'center', 'FontColor', [0 0 0.8]);
 ax = uiaxes(fig, 'Position', [265 40 695 530]);
 xlabel(ax, '時間 t [s]', 'FontSize', 11); ylabel(ax, '出力 y', 'FontSize', 11);
 title(ax, 'PID応答比較', 'FontSize', 13); grid(ax, 'on');
@@ -29,20 +29,22 @@ function pid_update(sld_p, sld_i, sld_d, lbl_p, lbl_i, lbl_d, lbl_ess, ax)
     odef = @(t, s, kp, ki, kd) [ s(2); ...
         -s(2) - s(1) + ( kp*(r - s(1)) + ki*s(3) - kd*s(2) ); ...
         r - s(1) ];
-    [tP, yP] = ode45(@(t,s) odef(t,s, Kp, 0,  0 ), tspan, s0);
-    [tI, yI] = ode45(@(t,s) odef(t,s, Kp, Ki, 0 ), tspan, s0);
-    [tD, yD] = ode45(@(t,s) odef(t,s, Kp, Ki, Kd), tspan, s0);
+    [tP,  yP ] = ode45(@(t,s) odef(t,s, Kp, 0,  0 ), tspan, s0);   % P
+    [tI,  yI ] = ode45(@(t,s) odef(t,s, Kp, Ki, 0 ), tspan, s0);   % PI
+    [tPD, yPD] = ode45(@(t,s) odef(t,s, Kp, 0,  Kd), tspan, s0);   % PD
+    [tD,  yD ] = ode45(@(t,s) odef(t,s, Kp, Ki, Kd), tspan, s0);   % PID
 
-    lbl_ess.Text = sprintf('P=%.2f  PI=%.2f  PID=%.2f', ...
-        r - yP(end,1), r - yI(end,1), r - yD(end,1));
+    lbl_ess.Text = sprintf('P=%.2f PI=%.2f PD=%.2f PID=%.2f', ...
+        r - yP(end,1), r - yI(end,1), r - yPD(end,1), r - yD(end,1));
 
     cla(ax);
-    plot(ax, tP, yP(:,1), '-', 'LineWidth', 2); hold(ax, 'on');
-    plot(ax, tI, yI(:,1), '-', 'LineWidth', 2);
-    plot(ax, tD, yD(:,1), '-', 'LineWidth', 2);
+    plot(ax, tP,  yP(:,1),  '-', 'LineWidth', 2); hold(ax, 'on');
+    plot(ax, tI,  yI(:,1),  '-', 'LineWidth', 2);
+    plot(ax, tPD, yPD(:,1), '-', 'LineWidth', 2);
+    plot(ax, tD,  yD(:,1),  '-', 'LineWidth', 2);
     yline(ax, r, 'k--', 'LineWidth', 1);
     hold(ax, 'off'); grid(ax, 'on'); ylim(ax, [0 1.8]);
-    legend(ax, {'P', 'PI', 'PID', '目標 r'}, 'Location', 'southeast');
+    legend(ax, {'P', 'PI', 'PD', 'PID', '目標 r'}, 'Location', 'southeast');
     xlabel(ax, '時間 t [s]', 'FontSize', 11); ylabel(ax, '出力 y', 'FontSize', 11);
     title(ax, sprintf('PID応答比較   K_p=%.1f,  K_i=%.1f,  K_d=%.1f', Kp, Ki, Kd), 'FontSize', 12);
 end

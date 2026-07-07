@@ -1,9 +1,9 @@
-# PID Control — Response Comparison / PID制御 応答比較（P・PI・PID）
+# PID Control — Response Comparison / PID制御 応答比較（P・PI・PD・PID）
 
-Compare the closed-loop step response of **P**, **PI**, and **PID** control on a
+Compare the closed-loop step response of **P**, **PI**, **PD**, and **PID** control on a
 second-order plant by dragging the `Kp`, `Ki`, and `Kd` sliders.
 
-2次遅れプラントに対する **P**・**PI**・**PID** 制御の閉ループステップ応答を、
+2次遅れプラントに対する **P**・**PI**・**PD**・**PID** 制御の閉ループステップ応答を、
 `Kp`・`Ki`・`Kd` のスライダーで比較できます。
 
 ![PID response comparison](images/response.png)
@@ -14,14 +14,14 @@ second-order plant by dragging the `Kp`, `Ki`, and `Kd` sliders.
 
 **EN** — The plant is a second-order system `ÿ + ẏ + y = u`, controlled toward a unit
 step reference `r = 1`. The controller is `u = Kp·e + Ki·∫e dt + Kd·ė` with `e = r − y`
-(derivative on measurement to avoid setpoint kick). Using the **same** gains, three
-responses are drawn — P (Kp only), PI (Kp+Ki), and PID (Kp+Ki+Kd) — so you can see how
-each term changes the behavior. Solved with `ode45`; base MATLAB only.
+(derivative on measurement to avoid setpoint kick). Using the **same** gains, four
+responses are drawn — P (Kp only), PI (Kp+Ki), PD (Kp+Kd), and PID (Kp+Ki+Kd) — so you
+can see how each term changes the behavior. Solved with `ode45`; base MATLAB only.
 
 **JA** — プラントは2次遅れ系 `ÿ + ẏ + y = u`、目標は単位ステップ `r = 1`。
 コントローラは `u = Kp·e + Ki·∫e dt + Kd·ė`（`e = r − y`、微分は測定値微分でキック回避）。
-**同じ**ゲインで P（Kpのみ）・PI（Kp+Ki）・PID（Kp+Ki+Kd）の3応答を描き、各項の効果を
-見比べられます。`ode45` で数値積分、base MATLAB のみで動作します。
+**同じ**ゲインで P（Kpのみ）・PI（Kp+Ki）・PD（Kp+Kd）・PID（Kp+Ki+Kd）の4応答を描き、
+各項の効果を見比べられます。`ode45` で数値積分、base MATLAB のみで動作します。
 
 ---
 
@@ -34,8 +34,10 @@ each term changes the behavior. Solved with `ode45`; base MATLAB only.
 | **D** (derivative / 微分) | Suppresses overshoot and **stabilizes** / **オーバーシュートを抑え安定化** |
 
 > With the plant DC gain = 1, the P-only offset is `1/(1+Kp)` (e.g. `Kp=2 → 0.33`).
-> Adding integral action drives it to zero. / Pのみのオフセットは `1/(1+Kp)`（Kp=2で0.33）。
-> 積分を加えるとゼロになります。
+> **PD keeps the same offset** (no integral) but is smoother; adding integral (PI, PID)
+> drives the offset to zero. / Pのみのオフセットは `1/(1+Kp)`（Kp=2で0.33）。
+> **PD は積分が無いので同じオフセットが残り**ますが応答は滑らかになり、積分を加える
+> （PI・PID）とオフセットはゼロになります。
 
 ---
 
