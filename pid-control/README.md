@@ -79,6 +79,8 @@ can see how each term changes the behavior. Solved with `ode45`; base MATLAB onl
 BSD 3-Clause License. See [../LICENSE.txt](../LICENSE.txt) (applies to the whole
 collection). / BSD 3-Clause ライセンス（コレクション全体に適用）。
 
+---
+
 ## Author & Citation / 著者・引用
 
 - Author / 著者: **A. Suda**, National Institute of Technology (KOSEN), Nara College

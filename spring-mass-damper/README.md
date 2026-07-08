@@ -36,17 +36,6 @@ formats so learners can pick the style that suits them.
 
 ---
 
-## Requirements / 動作環境
-
-| | |
-|---|---|
-| MATLAB | **R2025a or later recommended** / **R2025a 以降推奨**（plain-text Live Script `.m` 対応） |
-| | `.mlx` と GUI app のみなら R2016b+ でも動作 / `.mlx` and apps also work on R2016b+ |
-| Toolboxes | **None / 不要**（base MATLAB のみ） |
-| Tested on / 検証環境 | MATLAB R2026a (Windows 11) |
-
----
-
 ## File List / ファイル構成
 
 | File / ファイル | Role / 役割 | Format / 形式 |
@@ -56,6 +45,14 @@ formats so learners can pick the style that suits them.
 | `smd_static_script.m` | Classic section (`%%`) script — a clean, version-control-friendly baseline. / クラシックな`%%`セクションscript。VC向けのベースライン | Script |
 | `smd_app.m` | Standalone GUI app (`uifigure` + `uislider`) with m/k/ζ sliders. / m/k/ζスライダー付きの独立GUIアプリ | Script (app) |
 | `smd_app_livescript.m` | A Live Script that launches the GUI simulator when run. / 実行するとGUIシミュレータが起動するLive Script | Live Script |
+
+| Interactive Live Script / インタラクティブLive Script | GUI App / GUIアプリ |
+|---|---|
+| ![interactive](images/interactive.png) | ![app](images/app.png) |
+
+*Left: embedded sliders and the auto-updated plot in the Live Editor. Right: the
+standalone `uifigure` app. / 左：Live Editorの埋め込みスライダーと自動更新される
+グラフ。右：独立GUIアプリ。*
 
 ---
 
@@ -101,15 +98,14 @@ Damping regimes / 減衰の分類:
 
 ---
 
-## Screenshots / スクリーンショット
+## Requirements / 動作環境
 
-| Interactive Live Script / インタラクティブLive Script | GUI App / GUIアプリ |
+| | |
 |---|---|
-| ![interactive](images/interactive.png) | ![app](images/app.png) |
-
-*Left: embedded sliders and the auto-updated plot in the Live Editor. Right: the
-standalone `uifigure` app. / 左：Live Editorの埋め込みスライダーと自動更新される
-グラフ。右：独立GUIアプリ。*
+| MATLAB | **R2025a or later recommended** / **R2025a 以降推奨**（plain-text Live Script `.m` 対応） |
+| | `.mlx` と GUI app のみなら R2016b+ でも動作 / `.mlx` and apps also work on R2016b+ |
+| Toolboxes | **None / 不要**（base MATLAB のみ） |
+| Tested on / 検証環境 | MATLAB R2026a (Windows 11) |
 
 ---
 
