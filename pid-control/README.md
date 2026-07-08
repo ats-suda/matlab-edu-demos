@@ -79,6 +79,15 @@ can see how each term changes the behavior. Solved with `ode45`; base MATLAB onl
 BSD 3-Clause License. See [../LICENSE.txt](../LICENSE.txt) (applies to the whole
 collection). / BSD 3-Clause ライセンス（コレクション全体に適用）。
 
-## Author / 著者
+## Author & Citation / 著者・引用
 
-- A. Suda, National Institute of Technology (KOSEN), Nara College
+- Author / 著者: **A. Suda**, National Institute of Technology (KOSEN), Nara College
+- Contact / 連絡先: ats-suda@users.noreply.github.com
+
+If you use this in teaching or research, a citation is appreciated / 教育・研究で
+利用される場合は、以下のような引用をいただけると幸いです:
+
+```
+A. Suda (2026). MATLAB Educational Demos (Live Scripts & Apps).
+MATLAB Central File Exchange. https://jp.mathworks.com/matlabcentral/fileexchange/184202-matlab-educational-demos-live-scripts-apps
+```
