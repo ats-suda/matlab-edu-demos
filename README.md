@@ -54,14 +54,22 @@ change its parameters, rather than reading equations alone.
 the **MATLAB Agentic Toolkit** and the **MATLAB MCP Server**, Claude (Anthropic's Claude
 Code) drives a locally installed MATLAB in a conversational loop — authoring the code,
 running the Code Analyzer, executing scripts, generating Live Scripts (`.mlx`) via the
-Live Editor API, and verifying the on-screen rendering — while the human author guides
-the design and reviews each iteration.
+Live Editor API, and even verifying the on-screen rendering — while the human author
+guides the design and reviews each iteration. Concretely, Claude uses the MATLAB MCP
+Server tools to statically analyze code (`checkcode`), run and evaluate scripts, and
+consults MathWorks' coding and plain-text-Live-Script guidelines; it produces the binary
+`.mlx` files through the Live Editor `saveAs` API and confirms the rendered output by
+capturing the actual Live Editor window.
 
 **JA** — 本コレクションは、エージェント型のAI支援ワークフローで開発しています。
 **MATLAB Agentic Toolkit** と **MATLAB MCP Server** を用いて、Claude（AnthropicのClaude
 Code）がローカルのMATLABを対話的に操作し、コード作成・コードアナライザー実行・
 スクリプト実行・Live Editor API による `.mlx` 生成・表示確認までを担い、人間の著者が
-設計方針を指示し各段階をレビューしています。
+設計方針を指示し各段階をレビューしています。具体的には、Claude は MATLAB MCP Server
+のツールで静的解析（`checkcode`）とスクリプト実行・評価を行い、MathWorks のコーディング
+規約およびプレーンテキストLive Scriptのガイドラインを参照し、Live Editor の `saveAs`
+API を通じてバイナリ `.mlx` を生成、実際のLive Editor画面をキャプチャして表示を確認して
+います。
 
 ---
 
