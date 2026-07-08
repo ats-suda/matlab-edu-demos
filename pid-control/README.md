@@ -25,6 +25,19 @@ can see how each term changes the behavior. Solved with `ode45`; base MATLAB onl
 
 ---
 
+## Features / 特長
+
+- **Three learning styles / 3つの学習スタイル**
+  - Interactive Live Script with embedded sliders / スライダー埋め込みのインタラクティブLive Script
+  - Classic section (`%%`) script / クラシックな`%%`セクションscript
+  - Standalone GUI app / 独立GUIアプリ
+- **Four control modes / 4つの制御方式** — compare P / PI / PD / PID with the same gains / 同一ゲインで P・PI・PD・PID を比較
+- **No extra toolboxes / 追加Toolbox不要** — base MATLAB only（`ode45`）
+- **Japanese UI & comments / 日本語UI・コメント**
+- **Real-time parameter exploration / パラメータをリアルタイムに探索**（Kp, Ki, Kd）
+
+---
+
 ## What each term does / 各項の役割
 
 | Term / 項 | Effect / 効果 |
@@ -56,14 +69,20 @@ can see how each term changes the behavior. Solved with `ode45`; base MATLAB onl
 ## Getting Started / 使い方
 
 **EN**
-- **Interactive** → open `pid_interactive_livescript.mlx` in the Live Editor, drag Kp/Ki/Kd.
-- **GUI app** → run `pid_app.m`; a window with three sliders opens.
-- **Read-through / tweak** → run `pid_static_script.m` after editing the gains.
+1. Download/clone the folder and add it to the MATLAB path.
+2. Pick a file by learning style:
+   - **Interactive** → open `pid_interactive_livescript.mlx` in the Live Editor and drag Kp/Ki/Kd.
+   - **GUI app** → run `pid_app.m`; a window with three sliders opens.
+   - **Read-through / tweak** → run `pid_static_script.m` after editing the gains.
+3. Change `Kp`, `Ki`, `Kd` and compare how P / PI / PD / PID respond.
 
 **JA**
-- **インタラクティブ** → `pid_interactive_livescript.mlx` をLive Editorで開き、Kp/Ki/Kdを動かす。
-- **GUIアプリ** → `pid_app.m` を実行。3スライダー付きウィンドウが開く。
-- **通読・微調整** → `pid_static_script.m` のゲインを変更して実行。
+1. フォルダをダウンロード/クローンし、MATLABパスに追加します。
+2. 学習スタイルでファイルを選びます:
+   - **インタラクティブ** → `pid_interactive_livescript.mlx` をLive Editorで開き、Kp/Ki/Kdを動かす。
+   - **GUIアプリ** → `pid_app.m` を実行。3スライダー付きウィンドウが開く。
+   - **通読・微調整** → `pid_static_script.m` のゲインを変更して実行。
+3. `Kp`, `Ki`, `Kd` を変えて、P / PI / PD / PID の応答を見比べます。
 
 ---
 
