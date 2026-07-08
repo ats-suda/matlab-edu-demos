@@ -75,8 +75,9 @@ API を通じてバイナリ `.mlx` を生成、実際のLive Editor画面をキ
 
 ## License / ライセンス
 
-BSD 3-Clause License. See [LICENSE.txt](LICENSE.txt). / BSD 3-Clause ライセンス。詳細は
-[LICENSE.txt](LICENSE.txt) を参照してください。
+BSD 3-Clause License. See [LICENSE.txt](LICENSE.txt) (applies to the whole collection). /
+BSD 3-Clause ライセンス。詳細は [LICENSE.txt](LICENSE.txt)（コレクション全体に適用）を
+参照してください。
 
 ---
 

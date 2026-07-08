@@ -43,11 +43,11 @@ can see how each term changes the behavior. Solved with `ode45`; base MATLAB onl
 
 ## File List / ファイル構成
 
-| File / ファイル | Role / 役割 |
-|---|---|
-| `pid_interactive_livescript.m` / `.mlx` | ★ Interactive Live Script; drag Kp/Ki/Kd, responses update automatically. / 埋め込みスライダーで即再実行するインタラクティブLive Script |
-| `pid_static_script.m` | Classic section script — edit the gains and run. / クラシックな`%%`スクリプト（ゲインを書き換えて実行） |
-| `pid_app.m` | Standalone GUI app with sliders and a steady-state-error readout. / スライダーと定常偏差表示付きの独立GUIアプリ |
+| File / ファイル | Role / 役割 | Format / 形式 |
+|---|---|---|
+| `pid_interactive_livescript.m` / `.mlx` | ★ Interactive Live Script; drag Kp/Ki/Kd, responses update automatically. / 埋め込みスライダーで即再実行するインタラクティブLive Script | Plain-text Live (`.m`) + binary (`.mlx`) |
+| `pid_static_script.m` | Classic section (`%%`) script — edit the gains and run. / クラシックな`%%`スクリプト（ゲインを書き換えて実行） | Script |
+| `pid_app.m` | Standalone GUI app with sliders and a steady-state-error readout. / スライダーと定常偏差表示付きの独立GUIアプリ | Script (app) |
 
 ![PID app](images/app.png)
 
@@ -69,15 +69,20 @@ can see how each term changes the behavior. Solved with `ode45`; base MATLAB onl
 
 ## Requirements / 動作環境
 
-- MATLAB **R2025a or later** recommended (plain-text Live Script). `.mlx`/app run on R2016b+.
-- **No additional toolboxes** (base MATLAB, `ode45`). / 追加Toolbox不要。
+| | |
+|---|---|
+| MATLAB | **R2025a or later recommended** / **R2025a 以降推奨**（plain-text Live Script `.m` 対応） |
+| | `.mlx` と GUI app のみなら R2016b+ でも動作 / `.mlx` and apps also work on R2016b+ |
+| Toolboxes | **None / 不要**（base MATLAB のみ、`ode45`） |
+| Tested on / 検証環境 | MATLAB R2026a (Windows 11) |
 
 ---
 
 ## License / ライセンス
 
 BSD 3-Clause License. See [../LICENSE.txt](../LICENSE.txt) (applies to the whole
-collection). / BSD 3-Clause ライセンス（コレクション全体に適用）。
+collection). / BSD 3-Clause ライセンス。詳細は [../LICENSE.txt](../LICENSE.txt)（コレク
+ション全体に適用）を参照してください。
 
 ---
 
